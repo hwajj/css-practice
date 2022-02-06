@@ -2,25 +2,40 @@
 <html lang="en">
   <head>
     <title>css practice</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      div {
-        margin: 10px;
-        width: 150px;
-      }
 
-      #small {
-        border: 10px solid black;
-      }
-      #large {
-        border: 30px solid black;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
   </head>
   <body>
-    <div id="small">hello</div>
-    <div id="large">hello</div>
+    <div id="small">안녕</div>
+    <div id="large">안녕</div>
+    <div id="content-wrap">
+      <h4>This is an example for flex-wrap:wrap</h4>
+      <div class="content" id="content1">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+      </div>
+
+      <h4>This is an example for flex-wrap:nowrap</h4>
+      <div class="content" id="content2">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+      </div>
+
+      <h4>This is an example for flex-wrap:wrap-reverse</h4>
+      <div class="content" id="content3">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+      </div>
+
+      <h4>This is an example for flex-wrap:inherit</h4>
+      <div class="content" id="content4">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+      </div>
+    </div>
   </body>
 </html>

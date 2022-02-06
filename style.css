@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Spoqa-Han-Sans-Bold";
+  src: url("font/Spoqa-Han-Sans-Bold.woff");
+}
+
+body {
+  font-family: "Spoqa-Han-Sans-Bold";
+}
+
+div {
+  margin: 0;
+}
+
+#small {
+  border: 10px solid red;
+  width: 150px;
+}
+#large {
+  border: 30px solid black;
+  width: 150px;
+}
+
+.red {
+  background: orangered;
+}
+.green {
+  background: yellowgreen;
+}
+.blue {
+  background: steelblue;
+}
+
+#content1 {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  flex-wrap: wrap;
+}
+
+#content2 {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  flex-wrap: nowrap;
+}
+
+#content3 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 200px;
+  flex-wrap: wrap-reverse;
+}
+
+#content4 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 200px;
+  flex-wrap: inherit;
+}
+
+#content1 div {
+  width: 100px;
+  height: 100px;
+}
+
+#content2 div {
+  width: 100px;
+  height: 100px;
+}
+
+#content3 div {
+  width: 100px;
+  height: 100px;
+}
+
+#content4 div {
+  width: 100px;
+  height: 100px;
+}
+#content-wrap {
+  // flex-wrap: wrap;
+}
