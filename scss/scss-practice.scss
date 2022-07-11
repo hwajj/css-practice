@@ -21,9 +21,9 @@ $lineStyle : solid 1px rgb(183, 183, 183);
   height: $height;
 }
 
-@mixin  flexColumnLeftAlign() {
+@mixin  flexLeftAlign($direction) {
   display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
   justify-content: center;
   align-items: flex-start;
 }
@@ -36,7 +36,7 @@ $lineStyle : solid 1px rgb(183, 183, 183);
     padding: 20px;
     font-size: $defaultFontSize +5px;
     color: $defaultFontColor;
-    @include  flexColumnLeftAlign;  
+    @include  flexLeftAlign(column);  
   }
     
   ul {
@@ -58,7 +58,7 @@ $lineStyle : solid 1px rgb(183, 183, 183);
   width: 80%;
   height: 50px;
   border-radius: 10px;
-  @include  flexColumnLeftAlign;  
+  @include  flexLeftAlign(column); 
   margin: 20px;
   padding: 20px;
   p span {
@@ -79,14 +79,14 @@ $lineStyle : solid 1px rgb(183, 183, 183);
 .alert-box-brown {
   @extend %alert-box;
   @include backgroudAndFontColor(rgb(253, 247, 223), rgb(130, 118, 80));
-
 }
 
-
 .row {
+  @include  flexLeftAlign(row); 
   border-right: $lineStyle;;
   margin : 20px;
   background-color: rgb(227, 220, 230);
+  font-weight: 300;
 }
 
 .row::after {
@@ -98,18 +98,13 @@ $lineStyle : solid 1px rgb(183, 183, 183);
 
 
 @mixin col($percent) {  
+  @include  flexLeftAlign(column); 
   border: $lineStyle;
-  width: $percent;
-  float:left;
-  height: 40px;
-  padding : 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-weight: 300;
   border-right: none;
-
+  width: $percent;
+  height: 40px;
+  padding : 20px;  
+  font-weight: 300; 
 }
 
 .col-6 {
