@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+  
+$defaultFontSize : 25px;
+$defaultFontColor : rgb(41, 41, 41);
+$lineStyle : solid 1px rgb(183, 183, 183);
+
+@mixin backgroudAndFontColor($background, $font) {
+  background-color: $background;
+  color: $font;
+}
+
+@mixin listBorderStyle($height) {
+  width: 100%;
+  border: $lineStyle;
+  border-bottom: 0;
+  margin: 0;
+  list-style: none;
+  height: $height;
+}
+
+@mixin  flexColumnLeftAlign() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.box {
+  margin: 12px;
+  li {
+    @include listBorderStyle(100px);
+    padding: 20px;
+    font-size: $defaultFontSize +5px;
+    color: $defaultFontColor;
+    @include  flexColumnLeftAlign;  
+  }
+    
+  ul {
+    width: 80%;
+    padding: 0;
+    border-bottom: $lineStyle;
+  }
+
+
+}
+
+
+.active {
+  @include backgroudAndFontColor(rgb(76, 147, 255), white);
+}
+  
+%alert-box {
+  border-style: none;
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  @include  flexColumnLeftAlign;  
+  margin: 20px;
+  padding: 20px;
+  p span {
+    font-weight: 700;
+  }
+}
+
+.alert-box-green {
+  @extend %alert-box;
+  @include backgroudAndFontColor(rgb(220, 235, 213), rgb(80, 130, 86));
+
+}
+.alert-box-blue {
+  @extend %alert-box;
+  @include backgroudAndFontColor(rgb(220, 244, 255), rgb(80, 109, 130));
+
+}
+.alert-box-brown {
+  @extend %alert-box;
+  @include backgroudAndFontColor(rgb(253, 247, 223), rgb(130, 118, 80));
+
+}
+
+
+.row {
+  border-right: $lineStyle;;
+  margin : 20px;
+  background-color: rgb(227, 220, 230);
+}
+
+.row::after {
+  content : '';
+  display : block;
+  clear : both;
+}
+
+
+
+@mixin col($percent) {  
+  border: $lineStyle;
+  width: $percent;
+  float:left;
+  height: 40px;
+  padding : 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 300;
+  border-right: none;
+
+}
+
+.col-6 {
+  @include col(50%);
+}
+
+.col-4 {
+  @include col(100%/3);
+}
+
+.col-3 {
+  @include col(100%/4);
+}
