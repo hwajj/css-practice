@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 25%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h4,
+p {
+  margin: 10px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    width: 100%;
+  }
+}

@@ -1,0 +1,57 @@
+table {
+  border-collapse: collapse;
+}
+
+.cart-background {
+  width: 100%;
+  height: 400px;
+  background-color: #c2d3de;
+  padding: 30px;
+}
+
+.cart-table {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+tr,
+td {
+  /* border: 1px solid black; */
+}
+
+.cart-table td,
+.cart-table th {
+  padding: 15px;
+  border-bottom: 1px solid #c2d3de;
+}
+
+.cart-table th:nth-child(2) {
+  width: 700px;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: coral;
+  color: white;
+  cursor: pointer;
+  float: right;
+  display: block;
+  margin: 20px;
+}
+
+.btn:hover {
+  background-color: chocolate;
+}
+.btn:focus {
+  background-color: grey;
+}
+
+.btn:active {
+  background-color: brown;
+}

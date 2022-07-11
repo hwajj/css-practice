@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.form-background {
+  background-color: rgb(49, 47, 72);
+  padding: 30px;
+}
+
+.form-white {
+  background-color: white;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-input {
+  width: 100%;
+  /*input은 width 100% + 20px */
+  padding: 10px;
+  border: 1px solid rgb(111, 111, 111);
+  border-radius: 5px;
+}
+
+.w-50 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.w-100 {
+  width: 100%;
+  padding: 10px;
+}
+
+.form-long {
+  height: 200px;
+}
+
+.yellow-button {
+  display: block;
+  float: right;
+  color: white;
+  background-color: rgb(49, 47, 72);
+}

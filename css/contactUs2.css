@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.form-background {
+  background-color: rgb(49, 47, 72);
+  padding: 30px;
+}
+
+.form-white {
+  background-color: aliceblue;
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px hotpink;
+}
+
+.w-100 {
+  width: 100%;
+  padding: 10px;
+}
+
+.w-50 {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 1.2rem;
+  padding: 12px;
+}
+.form-long {
+  height: 150px;
+}
+
+label {
+  font-size: 17px;
+  margin: 2px;
+}
+.send-button {
+  float: right;
+  padding: 2px;
+  border-radius: 5px;
+  position: relative;
+  background-color: rgb(49, 47, 72);
+  color: aliceblue;
+  font-size: 16px;
+}
+
+.send-button:hover {
+  background-color: hotpink;
+}
+
+.send-button:active {
+  background-color: hotpink;
+  transform: translateY(1px);
+}

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.product-container {
+  width: 80%;
+  min-width: 100px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.product-container div {
+  float: left;
+  width: 25%;
+}
+
+h4,
+p {
+  transform: rotate(o.03deg);
+  margin: 30px;
+
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .product-container {
+    max-width: 600px;
+  }
+  .product-container div {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-container div {
+    width: 100%;
+  }
+}
