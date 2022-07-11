@@ -1,0 +1,58 @@
+div {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sh-list li {
+  list-style: none;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+.sh-list .active {
+  background: skyblue;
+  color: white;
+}
+
+.alert-box-green, .alert-box-blue, .alert-box-brown {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: white;
+  background-color: green;
+}
+
+.alert-box-brown {
+  background-color: orange;
+}
+
+.alert-box-blue {
+  background-color: blue;
+}
+
+.row .col-6 {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+.row .col-4 {
+  float: left;
+  width: 33.3333333333%;
+  padding: 15px;
+}
+
+.row .col-6 {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+.row .col-3 {
+  float: left;
+  width: 25%;
+  padding: 15px;
+}/*# sourceMappingURL=scss-answer.css.map */
