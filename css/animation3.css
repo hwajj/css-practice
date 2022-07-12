@@ -1,0 +1,120 @@
+body {
+  margin: 0 auto;
+  height: 800px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  padding: 0px;
+  height: 100%;
+}
+
+button {
+  margin: 20px;
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 80px;
+  font-size: 30px;
+  padding: 10px;
+  font-weight: 300;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 100px;
+}
+
+button:hover {
+  animation-name: wiglewigle;
+  animation-duration: 0.5s;
+}
+
+.rotatePlus {
+  cursor: pointer;
+  /* position: absolute;
+  top: 200px;
+  left: 200px; */
+}
+
+.rotatePlus:hover {
+  animation-name: rotateAndBigger;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+.black-bar {
+  margin: 0px;
+  padding: 20px;
+  width: 200px;
+  color: wheat;
+  background-color: black;
+  transform: translateX(-150px);
+  transition: all 1s;
+  text-align: right;
+}
+
+.black-bar:hover {
+  transform: translateX(0px);
+  text-align: center;
+}
+
+.black-bar:hover p:first-child {
+  animation: slide 2s;
+  cursor: pointer;
+}
+.black-bar:hover p:nth-of-type(2) {
+  animation: leftlide 2s;
+  cursor: pointer;
+}
+
+@keyframes wiglewigle {
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateAndBigger {
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(45deg) scale(1.5);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(50px);
+  }
+  25% {
+    transform: translateX(0px) skewX(-30deg);
+  }
+  50% {
+    transform: translateX(50px) skewX(-30deg);
+  }
+}
+@keyframes leftSlide {
+  0% {
+    transform: translateX(100px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+}
