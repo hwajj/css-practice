@@ -1,0 +1,36 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+    'nav nav nav nav'
+    'side main main main'
+    'side main main main';
+}
+
+.grid-container div {
+  border: 1px solid black;
+}
+
+.grid-nav {
+  grid-area: nav;
+}
+
+.grid-sidebar {
+  grid-area: side;
+}
+
+.grid-main {
+  grid-area: main;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-rows: 100px 100px 400px;
+    grid-template-areas:
+      'nav nav nav nav'
+      'side side side side'
+      'main main main main';
+  }
+}
