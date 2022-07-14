@@ -8,8 +8,17 @@
     <link href="css/main.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div>
+
     <div class="container">
-      <div class="header"></div>
+      <div class="header">
+        <button class="btn" id="login">로그인</button>
+      </div>
       <div class="left"></div>
       <div class="content">
         <button class="main-button absolute-center w-100">
@@ -18,5 +27,17 @@
       </div>
       <div class="footer"></div>
     </div>
+
+    <script>
+      console.log('hi');
+      document.getElementById('login').addEventListener('click', function () {
+        console.log('click');
+        document.querySelector('.black-bg').classList.add('show-modal');
+      });
+      document.getElementById('close').addEventListener('click', function () {
+        console.log('click');
+        document.querySelector('.black-bg').classList.remove('show-modal');
+      });
+    </script>
   </body>
 </html>
