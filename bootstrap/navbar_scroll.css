@@ -1,0 +1,25 @@
+:root {
+  scroll-behavior: auto;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+.navbar-brand {
+  font-size: 40px;
+}
+
+.list-group {
+  width: 100%;
+  display: none;
+  margin-top: 86px;
+}
+
+.show {
+  display: block;
+}
