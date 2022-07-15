@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <title>캐러셀 만들기</title>
+  </head>
+  <body>
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="image/grid/any.jpeg" />
+        </div>
+        <div class="slide-box">
+          <img src="image/grid/any2.jpeg" />
+        </div>
+        <div class="slide-box">
+          <img src="image/grid/nature.jpeg" />
+        </div>
+      </div>
+    </div>
+    <button class="slide slide-1">1</button>
+    <button class="slide slide-2">2</button>
+    <button class="slide slide-3">3</button>
+
+    <script>
+      document.querySelector('.slide').addEventListener('click', (e) => {
+        document.querySelector('.slide-container').style.transform =
+          'translateX(0vw)';
+      });
+
+      document.querySelector('.slide-1').addEventListener('click', () => {
+        document.querySelector('.slide-container').style.transform =
+          'translateX(0vw)';
+      });
+      document.querySelector('.slide-2').addEventListener('click', () => {
+        document.querySelector('.slide-container').style.transform =
+          'translateX(-100vw)';
+      });
+      document.querySelector('.slide-3').addEventListener('click', () => {
+        document.querySelector('.slide-container').style.transform =
+          'translateX(-200vw)';
+      });
+    </script>
+  </body>
+</html>
