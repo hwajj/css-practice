@@ -3,15 +3,20 @@ img {
 }
 
 .slide-container {
-  background-color: grey;
-  width: 300vw;
-  /*margin-left: -200vw;*/
+  overflow: hidden;
+  width: 30vw;
+}
 
+.slide-list {
+  background-color: grey;
+  width: 90vw;
+
+  /*margin-left: -200vw;*/
   transition: all 1s;
+  display: flex;
 }
 .slide-box {
-  width: 100vw;
-  float: left;
+  width: 30vw;
 }
 .slide-box img {
   width: 100%;

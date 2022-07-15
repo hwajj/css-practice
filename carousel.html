@@ -8,8 +8,8 @@
     <title>캐러셀 만들기</title>
   </head>
   <body>
-    <div style="overflow: hidden">
-      <div class="slide-container">
+    <div class="slide-container">
+      <div class="slide-list">
         <div class="slide-box">
           <img src="image/grid/any.jpeg" />
         </div>
@@ -26,22 +26,43 @@
     <button class="slide slide-3">3</button>
 
     <script>
-      document.querySelector('.slide').addEventListener('click', (e) => {
-        document.querySelector('.slide-container').style.transform =
-          'translateX(0vw)';
-      });
+      //   document.querySelector('.slide-1').addEventListener('click', () => {
+      //     document.querySelector('.slide-container').style.transform =
+      //       'translateX(0vw)';
+      //   });
+      //   document.querySelector('.slide-2').addEventListener('click', () => {
+      //     document.querySelector('.slide-container').style.transform =
+      //       'translateX(-30vw)';
+      //   });
+      //   document.querySelector('.slide-3').addEventListener('click', () => {
+      //     document.querySelector('.slide-container').style.transform =
+      //       'translateX(-60vw)';
+      //   });
 
-      document.querySelector('.slide-1').addEventListener('click', () => {
-        document.querySelector('.slide-container').style.transform =
-          'translateX(0vw)';
-      });
-      document.querySelector('.slide-2').addEventListener('click', () => {
-        document.querySelector('.slide-container').style.transform =
-          'translateX(-100vw)';
-      });
-      document.querySelector('.slide-3').addEventListener('click', () => {
-        document.querySelector('.slide-container').style.transform =
-          'translateX(-200vw)';
+      let width = 30;
+      let list = document.getElementsByClassName('slide');
+
+      let slideList = Array.from(list);
+
+      let imgWidth = document.querySelector('.slide-box').clientWidth;
+      //   slideList.map((e, i) => {
+      //     document
+      //       .querySelector('.slide-' + (i + 1))
+      //       .addEventListener('click', () => {
+      //         document.querySelector(
+      //           '.slide-list'
+      //         ).style.transform = `translateX(${-width * i}vw)`;
+      //       });
+      //   });
+      slideList.map((e, i) => {
+        document
+          .querySelector('.slide-' + (i + 1))
+          .addEventListener('click', () => {
+            // let width = 30;
+            document.querySelector(
+              '.slide-list'
+            ).style.transform = `translateX(${-imgWidth * i}px)`;
+          });
       });
     </script>
   </body>
