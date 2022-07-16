@@ -31,7 +31,31 @@
       <li class="list-group-item">A fourth item</li>
       <li class="list-group-item">And a fifth one</li>
     </ul>
+    <div class="lorem">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas
+      voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+      praesentium exercitationem. Lorem ipsum dolor sit, amet consectetur
+      adipisicing elit. Et deserunt nisi nam, officia delectus in recusandae
+      ipsam adipisci ab itaque praesentium suscipit vitae id pariatur facilis
+      ipsum est. Obcaecati, error. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Accusantium magni blanditiis enim sit, quos voluptas?
+      Nihil odio voluptatum dolores? Ipsum magni, repudiandae molestiae
+      excepturi hic consequatur doloremque libero animi natus.
+    </div>
 
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+      <select class="form-select mt-2 form-hide">
+        <option>95</option>
+        <option>100</option>
+      </select>
+    </form>
+    <div id="test"></div>
     <div style="height: 1000px"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -43,17 +67,42 @@
             .getElementsByClassName('list-group')[0]
             .classList.toggle('show');
         });
-      //   window.addEventListener('scroll', function () {
-      //     if (window.scrollY >= 100) {
-      //       document.querySelector('.navbar-brand').style.fontSize = '10px';
-      //     }
-      //     //console.log(window.scrollY);
-      //     //페이지상단~ 스크롤바 시작 =window.pageYOffset
-      //     //window.scrollTo(0, 100);
-      //     //window.scrollBy(0, 100);
-      //   });
+      window.addEventListener('scroll', function () {
+        if (window.scrollY >= 100) {
+          document.querySelector('.navbar-brand').style.fontSize = '10px';
+        } else {
+          document.querySelector('.navbar-brand').style.fontSize = '24px';
+        }
+      });
 
       //제이쿼리  scrollTop() 위치출력 scrollTop(100) 위치이동
+      //<div> 스크롤바 내린 높이 : scrollTop
+      //console.log($lorem.scrollTop);
+      //<div> 박스의 실제 높이
+      // console.log($lorem.scrollHeight);
+      //눈에보이는 div 박스의 높이
+      // console.log($lorem.clientHeight)
+      //실제 높이
+      // console.log($lorem.clientHeight + $lorem.scrollTop);
+      let $lorem = document.querySelector('.lorem');
+
+      $lorem.addEventListener('scroll', function () {
+        if ($lorem.clientHeight + $lorem.scrollTop >= $lorem.scrollHeight - 5) {
+          alert('약관을 다 읽으셨습니다');
+          $lorem.removeEventListener('scroll', arguments.callee);
+        }
+      });
+
+      $formSelect = document.querySelector('.form-select');
+
+      $formSelect.addEventListener('input', function () {
+        if ($formSelect.value == '셔츠') {
+          console.log('hi');
+          document
+            .querySelectorAll('.form-select')[1]
+            .classList.remove('form-hide');
+        }
+      });
     </script>
   </body>
 </html>

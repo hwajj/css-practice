@@ -8,6 +8,8 @@
 }
 
 body {
+  padding-top: 86px;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -22,4 +24,15 @@ body {
 
 .show {
   display: block;
+}
+
+.lorem {
+  margin: auto;
+  width: 80%;
+  height: 140px;
+  overflow-y: scroll;
+}
+
+.form-hide {
+  display: none;
 }
