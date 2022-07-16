@@ -44,7 +44,7 @@
 
       let slideList = Array.from(list);
 
-      let imgWidth = document.querySelector('.slide-box').clientWidth;
+      //let imgWidth = document.querySelector('.slide-box').clientWidth;
       //   slideList.map((e, i) => {
       //     document
       //       .querySelector('.slide-' + (i + 1))
@@ -54,16 +54,16 @@
       //         ).style.transform = `translateX(${-width * i}vw)`;
       //       });
       //   });
-      slideList.map((e, i) => {
+      for (let i = 0; i < list.length; i++) {
         document
           .querySelector('.slide-' + (i + 1))
           .addEventListener('click', () => {
             // let width = 30;
             document.querySelector(
               '.slide-list'
-            ).style.transform = `translateX(${-imgWidth * i}px)`;
+            ).style.transform = `translateX(${-width * i}vw)`;
           });
-      });
+      }
     </script>
   </body>
 </html>
