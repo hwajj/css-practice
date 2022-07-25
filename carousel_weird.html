@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <title>캐러셀 만들기 연습</title>
+    <style>
+      :root {
+        --width: 100vw;
+        --imageCount: 3;
+      }
+      .slide-container {
+        overflow: hidden;
+        width: var(--width);
+      }
+      .slide-list {
+        background-color: grey;
+        width: calc(var(--width) * var(--imageCount));
+
+        /*margin-left: -200vw;*/
+        transition: all 1s;
+        display: flex;
+      }
+
+      .slide-box {
+        width: var(--width);
+        float: left;
+      }
+      .slide-box img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <div class="slide-container">
+      <div class="slide-list">
+        <div class="slide-box">
+          <img src="image/grid/any.jpeg" />
+        </div>
+        <div class="slide-box">
+          <img src="image/grid/any2.jpeg" />
+        </div>
+        <div class="slide-box">
+          <img src="image/grid/nature.jpeg" />
+        </div>
+      </div>
+    </div>
+    <!-- <button class="slide slide-1">1</button>
+    <button class="slide slide-2">2</button>
+    <button class="slide slide-3">3</button> -->
+    <button class="slide" data-slide-index="0">1</button>
+    <button class="slide" data-slide-index="1">2</button>
+    <button class="slide" data-slide-index="2">3</button>
+    <script>
+      // let width = 30;
+      // let list = document.getElementsByClassName('slide');
+
+      // let slideList = Array.from(list);
+      // document.querySelector('.slide-1').addEventListener('click', () => {
+      //   document.querySelector('.slide-container').style.transform =
+      //     'translateX(0vw)';
+      // });
+      //   document.querySelector('.slide-2').addEventListener('click', () => {
+      //     document.querySelector('.slide-container').style.transform =
+      //       'translateX(-30vw)';
+      //   });
+      //   document.querySelector('.slide-3').addEventListener('click', () => {
+      //     document.querySelector('.slide-container').style.transform =
+      //       'translateX(-60vw)';
+      //   });
+
+      //let imgWidth = document.querySelector('.slide-box').clientWidth;
+      //   slideList.map((e, i) => {
+      //     document
+      //       .querySelector('.slide-' + (i + 1))
+      //       .addEventListener('click', () => {
+      //         document.querySelector(
+      //           '.slide-list'
+      //         ).style.transform = `translateX(${-width * i}vw)`;
+      //       });
+      //   });
+
+      /* 내가 생각할 때 가장 가독성 좋은 방법*/
+      // for (let i = 0; i < list.length; i++) {
+      //   document
+      //     .querySelector('.slide-' + (i + 1))
+      //     .addEventListener('click', () => {
+      //       // let width = 30;
+      //       document.querySelector(
+      //         '.slide-list'
+      //       ).style.transform = `translateX(${-width * i}vw)`;
+      //     });
+      // }
+
+      /*안 해본 방법을 시도해보려 했으나 리팩토링의 나쁜 예가 되어버린것 같다.*/
+      let widthVw = getComputedStyle(document.documentElement)
+        .getPropertyValue('--width')
+        .trim();
+      let widthUnit = widthVw.slice(-2);
+      let widthNum = widthVw.substring(widthVw.length - 2, 0);
+      let slideBtns = document.querySelectorAll('.slide');
+      slideBtns.forEach((slideBtn) =>
+        slideBtn.addEventListener('click', function () {
+          //let index = this.innerHTML;
+          document.querySelector('.slide-list').style.transform = `translateX(${
+            //  -widthNum * (index - 1)
+            -widthNum * this.dataset.slideIndex
+          }${widthUnit})`;
+        })
+      );
+    </script>
+  </body>
+</html>
